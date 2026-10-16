@@ -21,6 +21,10 @@ Start with six parts:
 
 See `frameworks/six-step-image-prompt.md` for the first framework.
 
+## Tested Prompts
+
+- `prompts/the-alchemists-rise/master-prompt.md` — modular master prompt for generating art from any part of the donghua *The Alchemist's Rise* (傲世丹神 / World Defying Dan God), with style anchor, character and scene modules, and five ready-to-use prompts.
+
 ## Principle
 
 **Prompt with intention, test the result, identify the failure, then change the relevant variable.**
