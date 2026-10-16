@@ -25,6 +25,10 @@ See `frameworks/six-step-image-prompt.md` for the first framework.
 
 - `prompts/the-alchemists-rise/master-prompt.md` — modular master prompt for generating art from any part of the donghua *The Alchemist's Rise* (傲世丹神 / World Defying Dan God), with style anchor, character and scene modules, and five ready-to-use prompts.
 
+## Deep Dives
+
+- `deep-dives/pinokio-cgi-video.md` — turn still art into CGI-look video with Pinokio (local Wan 2.2 / LTX-2.3 / FramePack stack): model chooser, motion-prompt system, settings cheat-sheet, and four ready-to-use CGI video prompts.
+
 ## Principle
 
 **Prompt with intention, test the result, identify the failure, then change the relevant variable.**
