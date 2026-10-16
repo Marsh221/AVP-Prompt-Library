@@ -1,0 +1,212 @@
+diff --git a/css/style.css b/css/style.css
+index 0307ec9..d9aa067 100644
+--- a/css/style.css
++++ b/css/style.css
+@@ -79,7 +79,7 @@
+ 
+   --bone:   #ede6e1;
+   --mute:   #a39a9d;
+-  --faint:  #6f676b;
++  --faint:  #8a8286; /* raised from #6f676b to meet WCAG AA on black */
+ 
+   --display: "Cinzel", "Times New Roman", serif;
+   --body:    "Jost", "Segoe UI", system-ui, sans-serif;
+@@ -312,6 +312,9 @@ h2 {
+   width: min(74vw, 1240px);
+   z-index: -1;
+ }
++.hero-art picture {
++  display: block; width: 100%; height: 100%; /* keep %-height chain intact */
++}
+ .hero-art img {
+   width: 100%; height: 100%;
+   object-fit: cover; object-position: center;
+@@ -498,6 +501,9 @@ h2 {
+   transition: border-color var(--ease) 0.4s, transform var(--ease) 0.5s,
+               box-shadow var(--ease) 0.5s;
+ }
++.work-frame picture {
++  display: block; width: 100%; height: 100%; /* keep %-height chain intact */
++}
+ .work-frame img {
+   width: 100%; height: 100%;
+   object-fit: cover;
+diff --git a/index.html b/index.html
+index 2591832..fbba15b 100644
+--- a/index.html
++++ b/index.html
+@@ -87,9 +87,20 @@
+     <section class="hero">
+       <div class="hero-art" aria-hidden="true">
+         <!-- PLACEHOLDER ARTWORK — replace assets/img/hero-main.jpg with your own hero piece -->
+-        <img src="assets/img/hero-main.jpg"
+-             alt=""
+-             fetchpriority="high" />
++        <picture>
++          <source type="image/avif"
++                  srcset="assets/img/hero-main-640.avif 640w, assets/img/hero-main-960.avif 960w, assets/img/hero-main-1280.avif 1280w, assets/img/hero-main-1672.avif"
++                  sizes="(max-width: 900px) 100vw, 74vw" />
++          <source type="image/webp"
++                  srcset="assets/img/hero-main-640.webp 640w, assets/img/hero-main-960.webp 960w, assets/img/hero-main-1280.webp 1280w, assets/img/hero-main-1672.webp"
++                  sizes="(max-width: 900px) 100vw, 74vw" />
++          <img src="assets/img/hero-main.jpg"
++               srcset="assets/img/hero-main-640.jpg 640w, assets/img/hero-main-960.jpg 960w, assets/img/hero-main-1280.jpg 1280w, assets/img/hero-main.jpg 1672w"
++               sizes="(max-width: 900px) 100vw, 74vw"
++               width="1672" height="941"
++               alt=""
++               fetchpriority="high" decoding="async" />
++        </picture>
+       </div>
+ 
+       <div class="hero-inner">
+@@ -152,8 +163,20 @@
+             <button class="work-frame" type="button"
+                     aria-label="View larger: The Ashen Crown (placeholder artwork)">
+               <!-- PLACEHOLDER ARTWORK -->
+-              <img src="assets/img/work-01-ashen-crown.jpg"
+-                   alt="Placeholder artwork: a fallen king on an obsidian throne, wrapped in drifting crimson embers." />
++              <picture>
++                <source type="image/avif"
++                        srcset="assets/img/work-01-ashen-crown-480.avif 480w, assets/img/work-01-ashen-crown-800.avif 800w, assets/img/work-01-ashen-crown-1086.avif"
++                        sizes="(max-width: 620px) 92vw, (max-width: 900px) 44vw, 50vw" />
++                <source type="image/webp"
++                        srcset="assets/img/work-01-ashen-crown-480.webp 480w, assets/img/work-01-ashen-crown-800.webp 800w, assets/img/work-01-ashen-crown-1086.webp"
++                        sizes="(max-width: 620px) 92vw, (max-width: 900px) 44vw, 50vw" />
++                <img src="assets/img/work-01-ashen-crown.jpg"
++                     srcset="assets/img/work-01-ashen-crown-480.jpg 480w, assets/img/work-01-ashen-crown-800.jpg 800w, assets/img/work-01-ashen-crown.jpg 1086w"
++                     sizes="(max-width: 620px) 92vw, (max-width: 900px) 44vw, 50vw"
++                     width="1086" height="1448"
++                     alt="Placeholder artwork: a fallen king on an obsidian throne, wrapped in drifting crimson embers."
++                   loading="lazy" decoding="async" />
++              </picture>
+             </button>
+             <figcaption class="work-caption">
+               <div class="work-caption-top">
+@@ -169,8 +192,20 @@
+             <button class="work-frame" type="button"
+                     aria-label="View larger: Cathedral of Quiet Embers (placeholder artwork)">
+               <!-- PLACEHOLDER ARTWORK -->
+-              <img src="assets/img/work-02-cathedral.jpg"
+-                   alt="Placeholder artwork: a silhouetted figure with a lantern inside a vast gothic cathedral lit by crimson glass." />
++              <picture>
++                <source type="image/avif"
++                        srcset="assets/img/work-02-cathedral-480.avif 480w, assets/img/work-02-cathedral-800.avif 800w, assets/img/work-02-cathedral-1086.avif"
++                        sizes="(max-width: 620px) 92vw, (max-width: 900px) 44vw, 50vw" />
++                <source type="image/webp"
++                        srcset="assets/img/work-02-cathedral-480.webp 480w, assets/img/work-02-cathedral-800.webp 800w, assets/img/work-02-cathedral-1086.webp"
++                        sizes="(max-width: 620px) 92vw, (max-width: 900px) 44vw, 50vw" />
++                <img src="assets/img/work-02-cathedral.jpg"
++                     srcset="assets/img/work-02-cathedral-480.jpg 480w, assets/img/work-02-cathedral-800.jpg 800w, assets/img/work-02-cathedral.jpg 1086w"
++                     sizes="(max-width: 620px) 92vw, (max-width: 900px) 44vw, 50vw"
++                     width="1086" height="1448"
++                     alt="Placeholder artwork: a silhouetted figure with a lantern inside a vast gothic cathedral lit by crimson glass."
++                   loading="lazy" decoding="async" />
++              </picture>
+             </button>
+             <figcaption class="work-caption">
+               <div class="work-caption-top">
+@@ -188,8 +223,20 @@
+             <button class="work-frame" type="button"
+                     aria-label="View larger: The Devourer of Stars (placeholder artwork)">
+               <!-- PLACEHOLDER ARTWORK -->
+-              <img src="assets/img/work-03-devourer.jpg"
+-                   alt="Placeholder artwork: a titanic cosmic entity of black void and crimson light towering over a dying star." />
++              <picture>
++                <source type="image/avif"
++                        srcset="assets/img/work-03-devourer-640.avif 640w, assets/img/work-03-devourer-960.avif 960w, assets/img/work-03-devourer-1280.avif 1280w, assets/img/work-03-devourer-1672.avif"
++                        sizes="92vw" />
++                <source type="image/webp"
++                        srcset="assets/img/work-03-devourer-640.webp 640w, assets/img/work-03-devourer-960.webp 960w, assets/img/work-03-devourer-1280.webp 1280w, assets/img/work-03-devourer-1672.webp"
++                        sizes="92vw" />
++                <img src="assets/img/work-03-devourer.jpg"
++                     srcset="assets/img/work-03-devourer-640.jpg 640w, assets/img/work-03-devourer-960.jpg 960w, assets/img/work-03-devourer-1280.jpg 1280w, assets/img/work-03-devourer.jpg 1672w"
++                     sizes="92vw"
++                     width="1672" height="941"
++                     alt="Placeholder artwork: a titanic cosmic entity of black void and crimson light towering over a dying star."
++                   loading="lazy" decoding="async" />
++              </picture>
+             </button>
+             <figcaption class="work-caption">
+               <div class="work-caption-top">
+@@ -207,8 +254,20 @@
+             <button class="work-frame" type="button"
+                     aria-label="View larger: Moonlit Sword Saint (placeholder artwork)">
+               <!-- PLACEHOLDER ARTWORK -->
+-              <img src="assets/img/work-04-sword-saint.jpg"
+-                   alt="Placeholder artwork: a donghua-inspired sword saint in white and crimson robes trailing crimson qi beneath a full moon." />
++              <picture>
++                <source type="image/avif"
++                        srcset="assets/img/work-04-sword-saint-480.avif 480w, assets/img/work-04-sword-saint-800.avif 800w, assets/img/work-04-sword-saint-1086.avif"
++                        sizes="(max-width: 620px) 92vw, (max-width: 900px) 44vw, 50vw" />
++                <source type="image/webp"
++                        srcset="assets/img/work-04-sword-saint-480.webp 480w, assets/img/work-04-sword-saint-800.webp 800w, assets/img/work-04-sword-saint-1086.webp"
++                        sizes="(max-width: 620px) 92vw, (max-width: 900px) 44vw, 50vw" />
++                <img src="assets/img/work-04-sword-saint.jpg"
++                     srcset="assets/img/work-04-sword-saint-480.jpg 480w, assets/img/work-04-sword-saint-800.jpg 800w, assets/img/work-04-sword-saint.jpg 1086w"
++                     sizes="(max-width: 620px) 92vw, (max-width: 900px) 44vw, 50vw"
++                     width="1086" height="1448"
++                     alt="Placeholder artwork: a donghua-inspired sword saint in white and crimson robes trailing crimson qi beneath a full moon."
++                   loading="lazy" decoding="async" />
++              </picture>
+             </button>
+             <figcaption class="work-caption">
+               <div class="work-caption-top">
+@@ -224,8 +283,20 @@
+             <button class="work-frame" type="button"
+                     aria-label="View larger: Wraith of the Black Orchard (placeholder artwork)">
+               <!-- PLACEHOLDER ARTWORK -->
+-              <img src="assets/img/work-05-black-orchard.jpg"
+-                   alt="Placeholder artwork: lantern wraiths drifting through a dead black orchard beneath a crimson aurora." />
++              <picture>
++                <source type="image/avif"
++                        srcset="assets/img/work-05-black-orchard-480.avif 480w, assets/img/work-05-black-orchard-800.avif 800w, assets/img/work-05-black-orchard-1086.avif"
++                        sizes="(max-width: 620px) 92vw, (max-width: 900px) 44vw, 50vw" />
++                <source type="image/webp"
++                        srcset="assets/img/work-05-black-orchard-480.webp 480w, assets/img/work-05-black-orchard-800.webp 800w, assets/img/work-05-black-orchard-1086.webp"
++                        sizes="(max-width: 620px) 92vw, (max-width: 900px) 44vw, 50vw" />
++                <img src="assets/img/work-05-black-orchard.jpg"
++                     srcset="assets/img/work-05-black-orchard-480.jpg 480w, assets/img/work-05-black-orchard-800.jpg 800w, assets/img/work-05-black-orchard.jpg 1086w"
++                     sizes="(max-width: 620px) 92vw, (max-width: 900px) 44vw, 50vw"
++                     width="1086" height="1448"
++                     alt="Placeholder artwork: lantern wraiths drifting through a dead black orchard beneath a crimson aurora."
++                   loading="lazy" decoding="async" />
++              </picture>
+             </button>
+             <figcaption class="work-caption">
+               <div class="work-caption-top">
+@@ -370,11 +441,11 @@
+         <a href="#commissions">Commissions</a>
+       </nav>
+ 
+-      <div class="footer-col" aria-label="Footer — elsewhere">
++      <nav class="footer-col" aria-label="Footer — elsewhere">
+         <h3>Elsewhere</h3>
+         <a href="https://www.instagram.com/art._visionary/" target="_blank" rel="noopener noreferrer" aria-label="Art Visionary Pixel on Instagram">Instagram <span aria-hidden="true">↗</span></a>
+         <a href="https://www.pinterest.com/Artvisionaryyy/" target="_blank" rel="noopener noreferrer" aria-label="Art Visionary Pixel on Pinterest">Pinterest <span aria-hidden="true">↗</span></a>
+-      </div>
++      </nav>
+     </div>
+ 
+     <div class="container footer-bottom">
+@@ -387,7 +458,7 @@
+   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Artwork viewer" hidden>
+     <div class="lightbox-backdrop" data-lb-close></div>
+     <figure class="lightbox-body">
+-      <img class="lightbox-img" src="" alt="" />
++      <img class="lightbox-img" alt="" />
+       <figcaption class="lightbox-caption"></figcaption>
+     </figure>
+     <button class="lightbox-close" type="button" aria-label="Close viewer" data-lb-close>×</button>
+diff --git a/js/main.js b/js/main.js
+index 3de6b1b..3c44a6d 100644
+--- a/js/main.js
++++ b/js/main.js
+@@ -87,7 +87,7 @@
+   function closeLightbox() {
+     lightbox.hidden = true;
+     document.body.style.overflow = "";
+-    lbImg.src = "";
++    lbImg.removeAttribute("src");
+     if (lastFocused) lastFocused.focus();
+   }
+ 
