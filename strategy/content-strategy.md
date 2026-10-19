@@ -94,6 +94,22 @@ _Add a row every Sunday with the week's numbers._
 2. **7–9pm EAT** — IG reel: the last video, ~7s loop format.
 3. **Same day** — Pinterest: still as 2:3 pin + video as video pin, both linking to IG.
 
+## Landing page image system (AVP-websites, 2026-10-19)
+
+Site container = 1180px. Frames render at (desktop): hero = up to 1240px wide × full viewport (portrait art, left side fades to copy); `.work-tall` ≈ 665×700 (4:5-ish); `.work-lean` ≈ 475×700 (~5:7); `.work-wide` = 1180×506 (21:9). Export rule: 2× frame size, JPG q~82, all `object-fit: cover`.
+
+| Slot | File (in `avp-landing-images/`) | Size | Source art |
+|---|---|---|---|
+| Hero | `hero-main.jpg` | 1200×1500 | Cosmic Phoenix Ascending |
+| 01 tall | `work-01-crimson-moon.jpg` | 1330×1400 | Red-moon horned warrior |
+| 02 lean | `work-02-screaming-void.jpg` | 950×1400 | Infernal screaming spectre |
+| 03 wide (21:9) | `work-03-phoenix-wide.jpg` (interim) | 2360×1012 | Phoenix wings band |
+| 04 lean (flip) | `work-04-beyond-form.jpg` | 950×1400 | Beyond Form — Cosmic Awakening |
+| 05 tall (flip) | — missing | ~1330×1400 | needs a portrait piece |
+
+**Count:** current layout = 5 work slots + hero. With 4 real pieces: **2 more minimum** (one wide landscape for the 21:9 slot — better than the interim phoenix cut, and one portrait) = 6 works, complete gallery. **Recommended: 4 more** (8 works, two full pair rows + wide) — pick from proven performers: F1 piece (Pinterest #1, 159k imp), jersey piece (65k imp), halo monk, gothic castle.
+**Resolution note:** current sources are 736–941px wide — fine at frame size, but re-export at 1600–2000px long edge for sharp Retina displays.
+
 ## Open questions
 
 - What is the last video about? → tailor caption + pin SEO once known.
