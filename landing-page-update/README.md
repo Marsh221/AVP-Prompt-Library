@@ -44,6 +44,26 @@ GitHub Pages redeploys automatically. Done.
    Quick version: pull the branch `arena/landing-real-artwork` state from the
    patch's diff, or just ask the agent to paste the blocks.
 
+## Option C — no git at all (GitHub website only, ~5 minutes)
+
+1. Download this folder as a zip:
+   https://github.com/Marsh221/AVP-Prompt-Library/archive/refs/heads/arena/4553759f-avp-prompt-library.zip
+   → unzip → open the `landing-page-update/` folder.
+2. Go to https://github.com/Marsh221/AVP-websites → open the `assets/img` folder.
+3. Click **Add file → Upload files**. Drag in all 8 files from `images/`.
+   (Uploading `hero-main.jpg` etc. with the same name **replaces** the old file.)
+   Commit the changes.
+4. In `assets/img`, **delete** the 5 old placeholders (trash icon → confirm,
+   each in its own commit or select-all in one): `work-01-ashen-crown.jpg`,
+   `work-02-cathedral.jpg`, `work-03-devourer.jpg`, `work-04-sword-saint.jpg`,
+   `work-05-black-orchard.jpg`.
+5. Back at the repo root: **Add file → Upload files** → drag in
+   `ready-files/index.html` (replaces the old one with all new titles,
+   alt text and the new row). Commit.
+6. Optional: same for `ready-files/README.md` and `ready-files/PLACEHOLDERS.md`.
+7. Wait 1–2 minutes — GitHub Pages redeploys automatically.
+   https://marsh221.github.io/AVP-websites now shows all 7 original works.
+
 ## Why these sizes
 
 Site container = 1180px. Frames render at ~665×700 (tall), ~475×700 (lean),
