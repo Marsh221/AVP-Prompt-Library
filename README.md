@@ -21,6 +21,10 @@ Start with six parts:
 
 See `frameworks/six-step-image-prompt.md` for the first framework.
 
+## Beyond prompts
+
+- `strategy/content-strategy.md` — audience data, content pillars, and the posting system for the art_visionary channels (Instagram + Pinterest).
+
 ## Principle
 
 **Prompt with intention, test the result, identify the failure, then change the relevant variable.**
