@@ -28,3 +28,8 @@ See `frameworks/six-step-image-prompt.md` for the first framework.
 ## Principle
 
 **Prompt with intention, test the result, identify the failure, then change the relevant variable.**
+
+## Prompts
+
+- `prompts/red-dragon-demon-marshal.md` — Red Dragon / Demon Marshal, 16:9 cinematic.
+- `prompts/red-dragon-demon-marshal-9x16.md` — same piece rebuilt as a 9:16 vertical pin, with the v1→v2 fix notes.
