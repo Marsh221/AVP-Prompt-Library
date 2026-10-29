@@ -67,3 +67,75 @@ Ghost Rider is a Marvel character. Keep this clearly identified as fan art, chec
 ## Asset status
 
 The three source images were shared in chat, but their image files have **not yet been committed to this repository**. Add optimized copies to `artworks/ghost-rider/assets/` and update this page with relative image links before calling the collection fully published. This entry deliberately avoids broken image links.
+
+
+## Expanded prompt kit — recreate the look
+
+Use these as starting points, then adapt aspect ratio and prompt syntax to the image model you're using. For a consistent set, keep the same palette, lighting language, and film texture across all three images.
+
+### Prompt A — Hero frame: rider on the burning horse
+
+**Prompt**
+
+```text
+A terrifying supernatural rider with a flaming skeletal skull, dressed in a weathered black biker suit, riding a muscular pitch-black horse through a vast midnight fog. The skull burns with white-hot ivory light at its core and molten orange around the edges; flames stream backward from the head and shoulders, illuminating dense smoke from behind. The horse is mostly a deep silhouette, with fire licking around its mane and hooves. Low frontal camera, full-body composition, rider centered but surrounded by generous negative space, realistic fire and smoke, dramatic chiaroscuro, deep blue-green-black shadows, amber haze, subtle 35mm film grain, imperfect analog photography, cinematic exposure, supernatural western mood, extremely detailed, vertical 4:5 frame.
+```
+
+**Composition controls:** Keep the rider and horse readable as one silhouette. Let the flames form a bright halo behind the subject rather than covering every detail.
+
+### Prompt B — Infernal close-up: the flaming horse
+
+**Prompt**
+
+```text
+Extreme close-up profile of a powerful black horse transformed by supernatural fire, its head and neck emerging from near-total darkness. A white-hot blaze traces the brow and muzzle; vivid vermilion and molten orange flames stream backward from the mane like a comet tail. The eye is intense but anatomically natural, the muzzle and ears remain recognizably equine, and the fire follows the shape of the head instead of becoming random ribbons. High-speed panning photograph, strong lateral motion, bright flame highlights against a deep black and midnight-teal background, sparse flying embers, rich shadow detail, analog film grain, bold graphic silhouette, dramatic crop, photorealistic dark fantasy, vertical 4:5 composition.
+```
+
+**Composition controls:** Preserve a recognizable horse head and a single direction of movement. The flame trail should lead the eye through the frame.
+
+### Prompt C — The escape: motorcycle leaving a trail of fire
+
+**Prompt**
+
+```text
+A lone supernatural biker in a dark helmet and weathered black riding gear races a custom black motorcycle across an empty desert highway at twilight. The rider and bike read as a crisp dark silhouette; the rear wheel throws a long, continuous ribbon of molten orange fire across the road, tapering into sparks and smoke far behind. Pale dusty sky fading from cool grey-blue to muted peach, distant low mountains, broad dark foreground, low side-on tracking camera, deliberate horizontal motion blur in the road and fire trail, gritty 35mm film texture, restrained highlights, eerie isolation, cinematic widescreen composition, realistic motorcycle proportions, high contrast, 16:9 frame.
+```
+
+**Composition controls:** Keep the motorcycle recognizable and the flame trail behind the rear wheel. Leave open space in front of the rider to imply speed.
+
+### Prompt D — Portrait alternative: the skull in the smoke
+
+**Prompt**
+
+```text
+Tight cinematic portrait of a supernatural flaming skull emerging from thick black smoke, charred bone structure, hollow eye sockets glowing like white-hot coals, fine cracks glowing molten orange, flames rising from the crown and trailing to one side in a strong wind. Almost-black background with deep teal shadows, a thin amber rim light around the jaw and cheekbones, floating embers, realistic fire behaviour, tactile soot and bone texture, subtle film grain, centered but not perfectly symmetrical, menacing and elegant rather than cartoonish, high-end dark-fantasy movie still, vertical 4:5 crop.
+```
+
+### Negative prompt (where supported)
+
+```text
+cartoon, anime, toy-like CGI, plastic skin, flat lighting, washed-out blacks, oversaturated neon, excessive lens flare, random fire covering the subject, messy flame shapes, extra limbs, duplicate heads, malformed hands, fused horse legs, incorrect horse anatomy, deformed motorcycle wheels, floating motorcycle parts, unreadable silhouette, text, captions, logo, watermark, border, low resolution, excessive sharpening, artificial smoothness
+```
+
+Negative prompts are optional and model-dependent. Some generators do not use a separate negative-prompt field; for those, convert the most important exclusions into concise natural-language instructions.
+
+## Suggested generation workflow
+
+1. **Generate the composition first.** Use Prompt A, B, or C with no extra effects beyond the described fire and lighting.
+2. **Choose the strongest silhouette.** Reject results where smoke, flame, or motion blur hides the subject.
+3. **Refine one variable at a time.** Adjust camera angle, flame direction, contrast, or background separately rather than rewriting everything.
+4. **Match the set.** Reuse the same palette words: *obsidian black, midnight teal, molten amber, white-hot highlights, analog film grain*.
+5. **Check anatomy and continuity.** Inspect the skull, horse legs, motorcycle wheels, rider posture, and the direction of the flame trail.
+6. **Finish for the platform.** Use 4:5 for a feed/carousel, 9:16 for a Reel or Story, and 16:9 for a cinematic banner. Generate or crop each format intentionally rather than stretching one image.
+
+### Quick troubleshooting
+
+| If the result looks… | Change this |
+|---|---|
+| Too bright or orange everywhere | Specify *fire is the only key light; preserve deep black shadows and selective highlights* |
+| Like generic fantasy art | Add *gritty analog film still, restrained color, imperfect exposure, realistic smoke* |
+| Too blurry to read | Specify *sharp subject silhouette, motion blur restricted to the flame trail and background* |
+| Anatomically confused | Simplify the scene, reduce flame complexity, and generate the subject before adding effects |
+| Inconsistent across the set | Reuse the same palette, film texture, contrast, and lighting language in every prompt |
+
+**Important:** These prompts are creative starting points, not guarantees of identical results. Image models interpret instructions differently, so test and refine them for the generator you use.
